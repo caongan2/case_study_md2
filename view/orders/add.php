@@ -10,7 +10,7 @@
                 <div class="col-lg-7">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Add new ĐƠN HÀNG</h1>
+                            <h1 class="h4 text-gray-900 mb-4">Add new order</h1>
                         </div>
                         <form method="post" class="user" enctype="multipart/form-data">
                             <div class="form-group row">

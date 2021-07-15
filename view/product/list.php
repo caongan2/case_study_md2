@@ -13,7 +13,7 @@ if (isset($_REQUEST['logOut'])) {
 <div class="col-12 col-md-12 mt-2">
     <div class="card">
         <div class="btn btn-success">
-            The list of ĐỒ UỐNG
+            The list of product
         </div>
         <div class="card-body">
             <div class="col-12">

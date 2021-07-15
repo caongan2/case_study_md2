@@ -26,8 +26,8 @@ if (isset($_REQUEST['logOut'])) {
     <!-- Custom fonts for this template-->
     <link href="../../startbootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../../startbootstrap/css/sb-admin-2.min.css" rel="stylesheet">
@@ -53,23 +53,26 @@ if (isset($_REQUEST['logOut'])) {
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Add new product</h1>
                                 </div>
-                                <form method="post" class="user" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control form-control-user"
-                                               placeholder="Product name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="number" name="price" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Product price">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="image">
-                                    </div>
-                                    <input type="submit" name="login" class="btn btn-primary btn-user btn-block" value="Update">
-                                    </a>
-                                    <a href="index.php?page=product&product=home" class="btn btn-secondary btn-user btn-block">Cancel</a>
-                                </form>
-
+                                <?php foreach ($products as $product): ?>
+                                    <form method="post" class="user" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input type="text" value="<?php echo $product->name?>" name="name" class="form-control form-control-user"
+                                                   placeholder="Product name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" value="<?php echo $product->price?>"  name="price" class="form-control form-control-user"
+                                                   id="exampleInputPassword" placeholder="Product price">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" name="image">
+                                        </div>
+                                        <input type="submit" name="login" class="btn btn-primary btn-user btn-block"
+                                               value="Update">
+                                        </a>
+                                        <a href="index.php?page=product&product=home"
+                                           class="btn btn-secondary btn-user btn-block">Cancel</a>
+                                    </form>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

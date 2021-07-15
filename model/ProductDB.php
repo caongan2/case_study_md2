@@ -39,11 +39,31 @@ class ProductDB
         return $stmt->fetchAll();
     }
 
+    public function detailProduct($id): array
+    {
+        $sql = "SELECT * FROM products WHERE id =".$id;
+        $stmt = $this->connection->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        $products = [];
+        foreach ($result as $item) {
+            $product = new Product($item);
+            $product->setId($item['id']);
+            $products[] = $product;
+        }
+        return $products;
+    }
+
     public function deleteProduct($id)
     {
-        $sql = "DELETE FROM products WHERE id = $id";
-        $stmt = $this->connection->connect()->query($sql);
-        $stmt->execute();
+        try {
+            $sql = "DELETE FROM products WHERE id = $id";
+            $stmt = $this->connection->connect()->query($sql);
+            $stmt->execute();
+        } catch (\PDOException $exception) {
+            echo "Không thể xoá sản phẩm này";
+            die();
+        }
     }
 
     public function updateProduct($id, $product)

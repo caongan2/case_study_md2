@@ -73,13 +73,13 @@ if (isset($_REQUEST['logOut'])) {
             <a class="nav-link collapsed" href="index.php?page=home" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Components</span>
+                <span>Feature</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="index.php?page=add">Add New</a>
-                    <a class="collapse-item" href="index.php?page=list">List ĐỒ UỐNG</a>
+                    <h6 class="collapse-header">Feature</h6>
+                    <a class="collapse-item" href="index.php?page=add">Add New product</a>
+                    <a class="collapse-item" href="index.php?page=list">List product</a>
                 </div>
             </div>
         </li>
@@ -95,8 +95,8 @@ if (isset($_REQUEST['logOut'])) {
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="index.php?page=table">The list of all  BÀN</a>
-                    <a class="collapse-item" href="index.php?page=unpaid">The list of BÀN empty</a>
+                    <a class="collapse-item" href="index.php?page=table">The list of all  table</a>
+                    <a class="collapse-item" href="index.php?page=unpaid">The list of table empty</a>
                     <a class="collapse-item" href="index.php?page=allList">Order</a>
                 </div>
             </div>

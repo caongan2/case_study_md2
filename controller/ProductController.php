@@ -61,10 +61,11 @@ class ProductController
 
     public function editProduct()
     {
+        $id =$_REQUEST['id'];
+        $products = $this->productDB->detailProduct($id);
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             include_once "view/product/edit.php";
         } else {
-            $id =$_REQUEST['id'];
             $name = $_POST['name'];
             $price = $_POST['price'];
             $target_dir = "view/product/uploads/";
