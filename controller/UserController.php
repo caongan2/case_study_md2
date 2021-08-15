@@ -113,15 +113,10 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             include_once "view/users/login.php";
         } else {
-            $errors = $this->checkInput();
-            if (empty($errors)) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $password = md5($password);
                 $this->userDB->login($username, $password);
-            } else {
-                include_once "view/users/login.php";
-            }
         }
 
     }
