@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" disabled name="username" value="<?php echo $result->username?>" class="form-control form-control-user" id="exampleFirstName">
+                                <input type="text" hidden name="username" value="<?php echo $result->username?>" class="form-control form-control-user" id="exampleFirstName">
                             </div>
                             <div class="form-group">
                                 <input type="text" value="<?php echo $result->email?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
@@ -64,7 +64,7 @@
                                 <input type="file" name="image">
                             </div>
                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Update Informaton">
-                            <a href="home.php" class="btn btn-primary btn-user btn-block">Cancel</a>
+                            <a href="home.php" class="btn btn-secondary btn-user btn-block">Cancel</a>
                         </form>
                     </div>
                 </div>

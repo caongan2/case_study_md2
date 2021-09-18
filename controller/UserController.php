@@ -131,7 +131,7 @@ class UserController
     {
 
         $result = $this->userDB->getInforByUsername();
-//        var_dump($result);
+        var_dump($result);
         include_once "view/users/profile.php";
     }
 
