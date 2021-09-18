@@ -46,8 +46,7 @@ if (isset($_REQUEST['logOut'])) {
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Add new product</h1>
@@ -64,9 +63,9 @@ if (isset($_REQUEST['logOut'])) {
                                     <div class="form-group">
                                         <input type="file" name="image">
                                     </div>
-                                    <input type="submit" name="login" class="btn btn-primary btn-user btn-block" value="Add New">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Add New">
                                     </a>
-                                    <a href="index.php?page=product&product=home" class="btn btn-primary btn-user btn-block">Cancel</a>
+                                    <a href="index.php?page=product&product=home" class="btn btn-secondary btn-user btn-block">Cancel</a>
                                 </form>
 
                             </div>

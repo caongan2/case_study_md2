@@ -77,20 +77,26 @@ class UserController
         }
     }
 
-    public function updatePassword()
+    public function updateProfile()
     {
         $result = $this->userDB->getInforByUsername();
-        echo "<pre>";
-//        var_dump($result);die();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             include_once "view/users/updatepass.php";
         } else {
-            $username = $_REQUEST['username'];
-            $password = $_POST['password'];
-            $password = md5($password);
-            $data = ['password' => $password];
+            $id = $result['id'];
+            $image = $result['image'];
+            $data = [
+                'username' => $_POST['username'],
+                'email' => $_POST['email'],
+                'numberPhone' => $_POST['numberPhone'],
+                'password' => $_POST['password'],
+                'address' => $_POST['address'],
+                'image' => $image
+            ];
             $user = new Users($data);
-            $this->userDB->updateID($username, $user);
+//            var_dump($user);die();
+            $this->userDB->updateProfile($id, $user);
+//            var_dump($result);die();
             header("Location:index.php?page=profile");
         }
     }
@@ -125,6 +131,7 @@ class UserController
     {
 
         $result = $this->userDB->getInforByUsername();
+        var_dump($result);
         include_once "view/users/profile.php";
     }
 

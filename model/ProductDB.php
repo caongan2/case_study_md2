@@ -32,7 +32,7 @@ class ProductDB
     public function getAllProduct(): array
     {
 
-        $sql = "SELECT * FROM products ORDER BY id ASC";
+        $sql = "SELECT * FROM products ORDER BY id DESC ";
         $stmt = $this->connection->connect()->query($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_OBJ);

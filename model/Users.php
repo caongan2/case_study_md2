@@ -43,7 +43,7 @@ class Users
     /**
      * @return mixed
      */
-    public function getUsername(): mixed
+    public function getUserName(): mixed
     {
         return $this->username;
     }

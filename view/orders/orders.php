@@ -38,7 +38,7 @@ if (isset($_REQUEST['logOut'])) {
                         <td><?php echo $order->status ?></td>
                         <td>
                             <a href="index.php?page=addDetails&id=<?php echo $order->orderNumber?>" class="btn btn-primary btn-sm">Update</a>
-                            <a href="index.php?page=paid&id=<?php echo $order->orderNumber?>" class="btn btn-primary btn-sm">PayDing</a>
+                            <a href="index.php?page=paid&id=<?php echo $order->orderNumber?>" class="btn btn-primary btn-sm">Pay</a>
                         </td>
                         <?php endforeach;?>
                     </tbody>

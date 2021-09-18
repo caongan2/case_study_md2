@@ -41,7 +41,6 @@ if (isset($_REQUEST['logOut'])) {
                         <?php endforeach;?>
                     </tbody>
                 </table>
-                <?php include_once "phantrang.php"?>
             </div>
         </div>
     </div>

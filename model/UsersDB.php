@@ -17,7 +17,7 @@ class UsersDB
     public function addUser(object $user)
     {
         try {
-            $sql = "INSERT INTO Users(username, password, email, numberPhone, address, image) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO users(username, password, email, numberPhone, address, image) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->connection->connect()->prepare($sql);
             $stmt->bindParam(1, $user->username);
             $stmt->bindParam(2, $user->password);
@@ -35,17 +35,22 @@ class UsersDB
 
     public function getInfor($username)
     {
-        $sql = "SELECT * FROM Users WHERE username = '$username'";
+        $sql = "SELECT * FROM users WHERE username = '$username'";
         $stmt = $this->connection->connect()->query($sql);
         $stmt->execute();
         return $stmt->fetch();
     }
 
-    public function updateID($username, $user)
+    public function updateProfile($id, $user)
     {
-        $sql = "UPDATE users SET password = '?' WHERE username = '$username'";
+        $sql = "UPDATE users SET username = ?, email = ?, numberPhone = ?, address = ? WHERE id = ?";
         $stmt = $this->connection->connect()->prepare($sql);
-        $stmt->bindParam(1, $user->password);
+        $stmt->bindParam(1, $user->username);
+        $stmt->bindParam(2, $user->email);
+        $stmt->bindParam(3, $user->numberPhone);
+        $stmt->bindParam(4, $user->address);
+        $stmt->bindParam(5, $id);
+//        var_dump($stmt->execute());die();
         return $stmt->execute();
     }
 
@@ -76,7 +81,6 @@ class UsersDB
         session_start();
         $username = $_SESSION['username'];
         $user = $this->getInfor($username);
-
         return $user;
     }
 

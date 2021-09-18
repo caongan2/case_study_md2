@@ -58,7 +58,7 @@ switch ($page) {
         $detailsController->addOrderDetails();
         break;
     case 'editPass':
-        $userController->updatePassword();
+        $userController->updateProfile();
         break;
     case 'paid':
         $orderController->setStatus();

@@ -38,13 +38,13 @@
                         </div>
                         <form method="post" class="user" enctype="multipart/form-data">
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" name="username" value="<?php echo $result["username"]?>" class="form-control form-control-user" id="exampleFirstName">
-                                </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="password" value="Input your password" class="form-control form-control-user" id="exampleLastName"
+                                    <input type="text" name="password" hidden value="Input your password" class="form-control form-control-user" id="exampleLastName"
                                            placeholder="Last Name">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username" value="<?php echo $result["username"]?>" class="form-control form-control-user" id="exampleFirstName">
                             </div>
                             <div class="form-group">
                                 <input type="text" value="<?php echo $result["email"]?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="image">
+                                <input type="file" name="image">
                             </div>
                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Update Informaton">
                             <a href="home.php" class="btn btn-primary btn-user btn-block">Cancel</a>
