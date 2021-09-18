@@ -38,7 +38,7 @@ class UsersDB
         $sql = "SELECT * FROM users WHERE username = '$username'";
         $stmt = $this->connection->connect()->query($sql);
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetchObject();
     }
 
     public function updateProfile($id, $user)
@@ -50,7 +50,6 @@ class UsersDB
         $stmt->bindParam(3, $user->numberPhone);
         $stmt->bindParam(4, $user->address);
         $stmt->bindParam(5, $id);
-//        var_dump($stmt->execute());die();
         return $stmt->execute();
     }
 
@@ -58,7 +57,7 @@ class UsersDB
     {
         $data = $this->getInfor($username);
         if ($data) {
-            if ($username == $data['username'] && $password == $data['password']) {
+            if ($username == $data->username && $password == $data->password) {
                 return true;
             }
         }
@@ -71,7 +70,7 @@ class UsersDB
             session_start();
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
-
+//            var_dump($username);die();
             header("Location:index.php?page=home");
         }
     }

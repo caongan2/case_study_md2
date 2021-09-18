@@ -81,10 +81,10 @@ class UserController
     {
         $result = $this->userDB->getInforByUsername();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            include_once "view/users/updatepass.php";
+            include_once "view/users/update-profile.php";
         } else {
-            $id = $result['id'];
-            $image = $result['image'];
+            $id = $result->id;
+            $image = $result->image;
             $data = [
                 'username' => $_POST['username'],
                 'email' => $_POST['email'],
@@ -131,7 +131,7 @@ class UserController
     {
 
         $result = $this->userDB->getInforByUsername();
-        var_dump($result);
+//        var_dump($result);
         include_once "view/users/profile.php";
     }
 

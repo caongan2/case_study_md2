@@ -30,7 +30,7 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
 
-                <div class="col-lg-5 d-none d-lg-block"><img src="view/users/uploads/<?php echo $result['image'] ?>" style="width: 400px; height: 450px" alt="Error"></div>
+                <div class="col-lg-5 d-none d-lg-block"><img src="view/users/uploads/<?php echo $result->image ?>" style="width: 400px; height: 450px" alt="Error"></div>
                 <div class="col-lg-7">
                     <div class="p-5">
                         <div class="text-center">
@@ -44,19 +44,19 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="username" value="<?php echo $result["username"]?>" class="form-control form-control-user" id="exampleFirstName">
+                                <input type="text" disabled name="username" value="<?php echo $result->username?>" class="form-control form-control-user" id="exampleFirstName">
                             </div>
                             <div class="form-group">
-                                <input type="text" value="<?php echo $result["email"]?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" value="<?php echo $result->email?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
                                 >
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" name="numberPhone" value="<?php echo $result["numberPhone"]?>" class="form-control form-control-user"
+                                    <input type="text" name="numberPhone" value="<?php echo $result->numberPhone?>" class="form-control form-control-user"
                                            id="exampleInputPassword" placeholder="Number Phone">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="address" value="<?php echo $result["address"]?>" class="form-control form-control-user"
+                                    <input type="text" name="address" value="<?php echo $result->address?>" class="form-control form-control-user"
                                            id="exampleRepeatPassword" placeholder="Address">
                                 </div>
                             </div>

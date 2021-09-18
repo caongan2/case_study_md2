@@ -39,37 +39,37 @@ if (isset($_REQUEST['logOut'])) {
             <!-- Nested Row within Card Body -->
             <div class="row">
 
-                <div class="col-lg-5 d-none d-lg-block"><img src="view/users/uploads/<?php echo $result['image'] ?>" style="width: 400px; height: 450px" alt="Error"></div>
+                <div class="col-lg-5 d-none d-lg-block"><img src="view/users/uploads/<?php echo $result->image ?>" style="width: 400px; height: 450px" alt="Error"></div>
                 <div class="col-lg-7">
                     <div class="p-5">
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Information with user</h1>
                         </div>
-                        <form action="index.php?page=editPass&username=<?php echo $result['username'] ?>" method="post" class="user" enctype="multipart/form-data">
+                        <form action="index.php?page=editPass&username=<?php echo $result->username ?>" method="post" class="user" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <input type="text" name="password" hidden value="<?php echo $result["password"]?>" class="form-control form-control-user" id="exampleLastName"
+                                    <input type="text" name="password" hidden value="<?php echo $result->password?>" class="form-control form-control-user" id="exampleLastName"
                                            placeholder="Last Name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="username" disabled value="<?php echo $result["username"]?>" class="form-control form-control-user" id="exampleFirstName">
+                                <input type="text" name="username" disabled value="<?php echo $result->username?>" class="form-control form-control-user" id="exampleFirstName">
                             </div>
                             <div class="form-group">
-                                <input type="text" disabled value="<?php echo $result["email"]?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" disabled value="<?php echo $result->email?>" name="email" class="form-control form-control-user" id="exampleInputEmail"
                                        >
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" disabled name="numberPhone" value="<?php echo $result["numberPhone"]?>" class="form-control form-control-user"
+                                    <input type="text" disabled name="numberPhone" value="<?php echo $result->numberPhone?>" class="form-control form-control-user"
                                            id="exampleInputPassword" placeholder="Number Phone">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" disabled name="address" value="<?php echo $result["address"]?>" class="form-control form-control-user"
+                                    <input type="text" disabled name="address" value="<?php echo $result->address?>" class="form-control form-control-user"
                                            id="exampleRepeatPassword" placeholder="Address">
                                 </div>
                             </div>
-                            <a href="index.php?page=editPass&id=<?php echo $result['id']?>" class="btn btn-primary btn-user btn-block">Update Profile</a>
+                            <a href="index.php?page=editPass&id=<?php echo $result->id?>" class="btn btn-primary btn-user btn-block">Update Profile</a>
                             <a href="home.php" class="btn btn-secondary btn-user btn-block">Cancel</a>
                         </form>
                     </div>
